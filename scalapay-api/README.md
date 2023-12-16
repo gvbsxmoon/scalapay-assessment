@@ -4,8 +4,10 @@
 ## Folder Structure
 
 -   **src**: Contains the source code of the application.
-    -   **order**: Order module to handle the corresponding api. This folder will also contains a mock file, the used DTO and the tests.
+    -   **order**: Order module, controller and service to handle the corresponding scalapay api. This folder will also contains a mock file and the Order DTO.
     -   **types**: Data Transfer Objects for defining data structures.
+    -   **test**: Application tests
+    -   **utils**: The possible utility files 
    
 
 ## Getting Started
@@ -63,9 +65,9 @@ The Swagger will be available at `http://localhost:<PORT>/swagger`.
 
 The other available scripts are:
 
--   `npm run build`: Build the application for production.
--  `npm run Test`: Run the test suite.
--   `npm run start:prod`: Start the application in production mode.
+-  `npm run start:dev`: Start the development server.
+-  `npm run test`: Run the test suite.
+-  `npm run test:cov`: Run the test suite and show the coverage.
 
 ## Docker
 
