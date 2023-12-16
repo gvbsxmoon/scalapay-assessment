@@ -4,17 +4,18 @@ import { OrderDTO } from './order.dto';
 
 @Injectable()
 export class OrderService {
-  private readonly _baseUrl: string =
-    'https://integration.api.scalapay.com/v2/orders';
-
   async createOrder(orderBody: OrderDTO) {
     try {
-      const response = await axios.post(this._baseUrl, orderBody, {
-        headers: {
-          Authorization: `Bearer ${process.env.SCALAPAY_SECRET}`,
-          Accept: 'application/json',
+      const response = await axios.post(
+        process.env.SCALAPAY_API_URL,
+        orderBody,
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.SCALAPAY_SECRET}`,
+            Accept: 'application/json',
+          },
         },
-      });
+      );
 
       return response.data;
     } catch (error) {

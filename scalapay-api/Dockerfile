@@ -21,7 +21,7 @@ COPY --from=builder /app/node_modules ./node_modules
 
 EXPOSE 5001
 
-ENV JWT_SECRET=SCALAPAY_SUPER_SECRET \
+ENV SCALAPAY_API_URL=https://integration.api.scalapay.com/v2/orders \
   SCALAPAY_SECRET=qhtfs87hjnc12kkos \
   PORT=5001
 

@@ -1,20 +1,31 @@
-import { Controller, Post, Body, Res, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Res,
+  UsePipes,
+  UseFilters,
+  ValidationPipe,
+} from '@nestjs/common';
 import { OrderService } from './order.service';
 import { OrderDTO } from './order.dto';
-import { AuthGuard } from '@auth/auth.guard';
+import { ApiTags } from '@nestjs/swagger';
+import { AllExceptionsFilter } from '@utils/http-exception.filter';
 
-@Controller('orders')
+@Controller('order')
+@ApiTags('Order')
+@UseFilters(AllExceptionsFilter)
 export class OrderController {
   constructor(private readonly scalaPayService: OrderService) {}
 
-  @UseGuards(AuthGuard)
+  @UsePipes(ValidationPipe)
   @Post()
   async createOrder(@Body() orderBody: OrderDTO, @Res() res): Promise<void> {
     try {
       const orderResponse = await this.scalaPayService.createOrder(orderBody);
-      res.status(200).json(orderResponse);
+      res.status(200).json({ ...orderResponse, order: { ...orderBody } });
     } catch (error) {
-      res.status(error.status).json(error.response);
+      //filters will catch all the throwed exceptions
     }
   }
 }
