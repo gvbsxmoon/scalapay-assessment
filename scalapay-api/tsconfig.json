@@ -16,6 +16,13 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@types": ["./src/types/index"],
+      "@auth/*": ["./src/auth/*"],
+      "@order/*": ["./src/order/*"],
+      "@user/*": ["./src/user/*"],
+      "@product/*": ["./src/product/*"]
+    }
   }
 }
