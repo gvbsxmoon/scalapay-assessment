@@ -25,4 +25,4 @@ ENV SCALAPAY_API_URL=https://integration.api.scalapay.com/v2/orders \
   SCALAPAY_SECRET=qhtfs87hjnc12kkos \
   PORT=5001
 
-CMD ["yarn", "start:prod"]
+CMD ["npm", "run", "start:prod"]
