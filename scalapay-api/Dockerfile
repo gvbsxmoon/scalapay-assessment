@@ -2,26 +2,26 @@ FROM node:lts-alpine as builder
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
+COPY package.json package-lock.json ./
 
-RUN yarn
+RUN npm i
 
 COPY . .
 
-RUN yarn build
+RUN npm run build
 
 FROM node:lts-alpine as production
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
+COPY package.json package-lock.json ./
 
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/node_modules ./node_modules
 
 EXPOSE 5001
 
-ENV JWT_SECRET=SCALAPAY_SUPER_SECRET \
+ENV SCALAPAY_API_URL=https://integration.api.scalapay.com/v2/orders \
   SCALAPAY_SECRET=qhtfs87hjnc12kkos \
   PORT=5001
 

@@ -3,10 +3,10 @@ import { OrderDTO } from './order.dto';
 const mockOrder: OrderDTO = {
   totalAmount: {
     currency: 'EUR',
-    amount: '120',
+    amount: "120",
   },
   consumer: {
-    phoneNumber: '0400000001',
+    phoneNumber: '0400000000',
     givenNames: 'Joe',
     surname: 'Consumer',
     email: 'test@scalapay.it',
@@ -15,7 +15,7 @@ const mockOrder: OrderDTO = {
     phoneNumber: '0400000000',
     countryCode: 'IT',
     name: 'Joe Consumer',
-    postcode: '50056',
+    postcode: "50056",
     suburb: 'Montelupo Fiorentino',
     line1: 'Via della Rosa, 58',
   },
@@ -25,11 +25,11 @@ const mockOrder: OrderDTO = {
   },
   shippingAmount: {
     currency: 'EUR',
-    amount: '12',
+    amount: "12",
   },
   taxAmount: {
     currency: 'EUR',
-    amount: '120',
+    amount: "120",
   },
   type: 'online',
   product: 'pay-in-3',
@@ -42,13 +42,13 @@ const mockOrder: OrderDTO = {
     {
       price: {
         currency: 'EUR',
-        amount: '10.00',
+        amount: "10.0",
       },
       quantity: 1,
-      gtin: '123458791330',
+      gtin: "123458791330",
       name: 'T-Shirt',
       category: 'clothes',
-      sku: '12341234',
+      sku: "12341234",
     },
   ],
   merchantReference: 'merchantOrder-1234',

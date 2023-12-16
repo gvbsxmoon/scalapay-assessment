@@ -28,6 +28,8 @@
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/swagger": "^7.1.17",
     "axios": "^1.6.2",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
     "uuid": "^9.0.1"
@@ -67,11 +69,10 @@
       "^.+\\.(t|j)s$": "ts-jest"
     },
     "moduleNameMapper": {
-      "^@types/(.*)$": "<rootDir>/types/$1",
-      "^@auth/(.*)$": "<rootDir>/auth/$1",
-      "^@order/(.*)$": "<RootDir>/order/$1",
-      "^@user/(.*)$": "<RootDir>/user/$1",
-      "^@product/(.*)$": "<RootDir>/product/$1"
+      "@types": "<rootDir>/types/index.ts",
+      "^@src/(.*)$": "<rootDir>/$1",
+      "^@utils/(.*)$": "<rootDir>/utils/$1",
+      "^@order/(.*)$": "<rootDir>/order/$1"
     },
     "collectCoverageFrom": [
       "**/*.(t|j)s"
