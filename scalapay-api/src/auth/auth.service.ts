@@ -1,13 +1,13 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import mockUsers from '@user/mock';
-import { UserDTO } from '@user/user.dto';
+/* import mockUsers from '@user/mock';
+import { UserDTO } from '@user/user.dto'; */
 
 @Injectable()
 export class AuthService {
   constructor(private readonly jwtService: JwtService) {}
 
-  signIn(credentials: { email: string; password: string }): UserDTO {
+  /* signIn(credentials: { email: string; password: string }): UserDTO {
     const user = mockUsers.find((user) => user.email == credentials.email);
 
     if (!user) {
@@ -26,5 +26,5 @@ export class AuthService {
     };
 
     return this.jwtService.sign(payload);
-  }
+  } */
 }

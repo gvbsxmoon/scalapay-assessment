@@ -5,7 +5,7 @@ import { AuthService } from './auth.service';
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
-  @Post()
+  /* @Post()
   signIn(
     @Body() credentials: { email: string; password: string },
     @Res() res,
@@ -17,5 +17,5 @@ export class AuthController {
     } catch (error) {
       res.status(error.status).json({ message: error.message });
     }
-  }
+  } */
 }

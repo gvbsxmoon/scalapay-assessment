@@ -30,9 +30,9 @@ Navigate to the api folder:
 
 `cd  <your-scalapay-project-path>/scalapay-api`
 
-Ensure to use the correct node version:
+Ensure to use the correct node version or to install it:
 
-`nvm use`
+`nvm use` || `nvm install` if you dont have it on your machine
 
 and install the dependencies:
 
@@ -52,11 +52,11 @@ Feel free to change the value of PORT to the one you prefer to use. If you consi
 
 ### Run the application
 
-Start the development server:
+Start the server:
 
-`npm run start:dev`
+`npm run start`
 
-The Scalapay API will be running at `http://localhost:<PORT>Ï`.
+The Scalapay API will be running at `http://localhost:<PORT>`.
 The Swagger will be available at `http://localhost:<PORT>/swagger`.
 
 ### Scripts

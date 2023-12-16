@@ -2,19 +2,19 @@ FROM node:lts-alpine as builder
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
+COPY package.json package-lock.json ./
 
-RUN yarn
+RUN npm i
 
 COPY . .
 
-RUN yarn build
+RUN npm run build
 
 FROM node:lts-alpine as production
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
+COPY package.json package-lock.json ./
 
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/node_modules ./node_modules
