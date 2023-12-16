@@ -10,7 +10,7 @@ COPY . .
 
 RUN yarn build
 
-FROM node:lts-alpine
+FROM node:lts-alpine as production
 
 WORKDIR /app
 
