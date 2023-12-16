@@ -1,73 +1,103 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# SCALAPAY API
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Folder Structure
 
-## Description
+-   **src**: Contains the source code of the application.
+    -   **order**: Order module to handle the corresponding api. This folder will also contains a mock file, the used DTO and the tests.
+    -   **types**: Data Transfer Objects for defining data structures.
+   
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Getting Started
 
-## Installation
+To run this NestJS project locally, follow these steps:
 
-```bash
-$ yarn install
+### Prerequisites
+
+Make sure you have the following software installed on your machine:
+
+-   Node.js: [Download and Install Node.js](https://nodejs.org/)
+-   npm (Node Package Manager): Installed with Node.js
+-   nvm (Node Version Manager): [Follow this to install nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+### Install Dependencies
+
+Clone the repository:
+
+`git clone https://github.com/gvbsxmoon/scalapay-assessment`
+
+Navigate to the api folder:
+
+`cd  <your-scalapay-project-path>/scalapay-api`
+
+Ensure to use the correct node version:
+
+`nvm use`
+
+and install the dependencies:
+
+`npm i`
+
+### Configuration
+
+Create a `.env` file within your root folder with the followings:
+
+```
+JWT_SECRET=SCALAPAY_SUPER_SECRET
+SCALAPAY_SECRET=qhtfs87hjnc12kkos
+PORT=5001
 ```
 
-## Running the app
+Feel free to change the value of PORT to the one you prefer to use. If you consider deleting it, the dev server will be available by default on port 3000
 
-```bash
-# development
-$ yarn run start
+### Run the application
 
-# watch mode
-$ yarn run start:dev
+Start the development server:
 
-# production mode
-$ yarn run start:prod
-```
+`npm run start:dev`
 
-## Test
+The Scalapay API will be running at `http://localhost:<PORT>Ï`.
+The Swagger will be available at `http://localhost:<PORT>/swagger`.
 
-```bash
-# unit tests
-$ yarn run test
+### Scripts
 
-# e2e tests
-$ yarn run test:e2e
+The other available scripts are:
 
-# test coverage
-$ yarn run test:cov
-```
+-   `npm run build`: Build the application for production.
+-  `npm run Test`: Run the test suite.
+-   `npm run start:prod`: Start the application in production mode.
 
-## Support
+## Docker
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+If you do prefer to use Docker in order to run this project you can follow these steps:
 
-## Stay in touch
+### Prerequisites
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Make sure to have [Docker](https://docs.docker.com/get-docker/) installed on your machine and to have it up and running.
+- Check if docker daemon is up by running `docker info`.
 
-## License
+### Build the application
 
-Nest is [MIT licensed](LICENSE).
+Clone the repository:
+
+`git clone https://github.com/gvbsxmoon/scalapay-assessment`
+
+Navigate to the api folder:
+
+`cd  <your-scalapay-project-path>/scalapay-api`
+
+Build your docker image: 
+
+`docker build -t scalapay-api:latest .`
+
+### Run the application
+
+Run the image you created:
+
+`docker run -d -p 5001:5001 scalapay-api:latest`
+
+The Scalapay API will be running at `http://localhost:5001`.
+The Swagger will be available at `http://localhost:5001/swagger`.
+
+
+

@@ -26,6 +26,7 @@
     "@nestjs/jwt": "^10.2.0",
     "@nestjs/mapped-types": "*",
     "@nestjs/platform-express": "^10.0.0",
+    "@nestjs/swagger": "^7.1.17",
     "axios": "^1.6.2",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
@@ -64,6 +65,13 @@
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "moduleNameMapper": {
+      "^@types/(.*)$": "<rootDir>/types/$1",
+      "^@auth/(.*)$": "<rootDir>/auth/$1",
+      "^@order/(.*)$": "<RootDir>/order/$1",
+      "^@user/(.*)$": "<RootDir>/user/$1",
+      "^@product/(.*)$": "<RootDir>/product/$1"
     },
     "collectCoverageFrom": [
       "**/*.(t|j)s"
