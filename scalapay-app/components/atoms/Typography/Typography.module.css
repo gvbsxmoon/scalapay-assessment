@@ -1,0 +1,25 @@
+.title {
+	font-size: var(--large);
+	font-weight: var(--bold);
+}
+
+.subtitle {
+	font-size: var(--xmedium);
+	font-weight: var(--xregular);
+}
+
+.body {
+	font-size: var(--base);
+	font-weight: var(--xregular);
+}
+
+.paragraph {
+	font-size: var(--base);
+	font-weight: var(--regular);
+}
+
+.caption {
+	font-size: var(--xsmall);
+	font-weight: var(--regular);
+	color: orangered;
+}
