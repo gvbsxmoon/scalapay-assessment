@@ -26,15 +26,16 @@ type InputFieldProps = {
 	label: string;
 	name: string;
 	type: string;
+	placeholder?: string;
 	register: UseFormRegister<FieldValues>;
 	options?: RegisterOptions<FieldValues, string> | undefined;
 };
 
-const InputField: React.FC<InputFieldProps> = ({ label, name, type, register, options }) => {
+const InputField: React.FC<InputFieldProps> = ({ label, name, type, placeholder, register, options }) => {
 	return (
 		<Flex flexDirection='column' gap='8px'>
 			<Label>{label}</Label>
-			<StyledInputField type={type} {...register(name, { ...options })} />
+			<StyledInputField type={type} placeholder={placeholder} {...register(name, { ...options })} />
 		</Flex>
 	);
 };
