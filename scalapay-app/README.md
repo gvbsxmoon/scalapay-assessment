@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SCALAPAY APP
+
+## Folder Structure
+
+-   **src**: Contains the source code of the application.
+    -   **assets**: Mocked data, logos
+    -   **components**: Structured design system based on the Atomic Design Patter
+        -   **atoms**
+        -   **molecules**
+        -   **organisms**
+    -   **context**: Order context
+    -   **interfaces**: The interfaces used throughout the app
+    -   **styles**: Color palette, fonts definition and global style
+    -   **views**: The views that make up the pages  
+   
 
 ## Getting Started
 
-First, run the development server:
+To run this Vite React project locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Make sure you have the following software installed on your machine:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-   Node.js: [Download and Install Node.js](https://nodejs.org/)
+-   npm (Node Package Manager): Installed with Node.js
+-   nvm (Node Version Manager): [Follow this to install nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Install Dependencies
 
-## Learn More
+Clone the repository:
 
-To learn more about Next.js, take a look at the following resources:
+`git clone https://github.com/gvbsxmoon/scalapay-assessment`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Navigate to the api folder:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+`cd  <your-scalapay-project-path>/scalapay-app`
 
-## Deploy on Vercel
+Ensure to use the correct node version or to install it:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`nvm use` || `nvm install` if you dont have it on your machine
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+and install the dependencies:
+
+`npm i`
+
+### Run the application
+
+** IMPORTANT: if by chance a custom port has been defined within the API project, change the port of the `_baseUrl` in `./src/views/FormView.tsx` in the port value chosen previously**
+
+Start the server:
+
+`npm run dev`
+
+The Scalapay APP will be running at `http://localhost:5173`.
+
+### Scripts
+
+The other useful available scripts are:
+
+-  `npm run test`: Run the test suite.
+
+### Known errors
+
+Despite the form validation is working, error messages have not been managed.
+
+## Docker
+
+If you do prefer to use Docker in order to run this project you can follow these steps:
+
+### Prerequisites
+
+- Make sure to have [Docker](https://docs.docker.com/get-docker/) installed on your machine and to have it up and running.
+- Check if docker daemon is up by running `docker info`.
+
+### Clone the application
+
+Clone the repository:
+
+`git clone https://github.com/gvbsxmoon/scalapay-assessment`
+
+Navigate to the root folder folder:
+
+`cd  <your-scalapay-project-path>`
+
+### Run the application
+
+`docker-compose up`
+
+The Scalapay APP will be running at `http://localhost:5173`.
+
+
+

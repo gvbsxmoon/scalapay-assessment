@@ -6,6 +6,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.setGlobalPrefix('api/v1');
+  app.enableCors({
+    origin: 'http://localhost:5173',
+  });
 
   const config = new DocumentBuilder()
     .setTitle('Scalapay API')

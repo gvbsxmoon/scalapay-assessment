@@ -21,11 +21,7 @@ export class OrderController {
   @UsePipes(ValidationPipe)
   @Post()
   async createOrder(@Body() orderBody: OrderDTO, @Res() res): Promise<void> {
-    try {
-      const orderResponse = await this.scalaPayService.createOrder(orderBody);
-      res.status(200).json({ ...orderResponse, order: { ...orderBody } });
-    } catch (error) {
-      //filters will catch all the throwed exceptions
-    }
+    const orderResponse = await this.scalaPayService.createOrder(orderBody);
+    res.status(200).json({ ...orderResponse, order: { ...orderBody } });
   }
 }

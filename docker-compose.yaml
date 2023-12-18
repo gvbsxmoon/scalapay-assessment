@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: ./scalapay-api
+    ports:
+      - "3000:3000"
+    networks:
+      - scalapay-network
+
+  app:
+    build:
+      context: ./scalapay-app
+    ports:
+      - "5173:80"
+    networks:
+      - scalapay-network
+
+networks:
+  scalapay-network:
+    driver: bridge

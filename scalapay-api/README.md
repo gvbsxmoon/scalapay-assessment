@@ -42,15 +42,14 @@ and install the dependencies:
 
 ### Configuration
 
-Create a `.env` file within your root folder with the followings:
+This project will use `cross-env` which in the `package.json` scripts defines environment variables, including the port:
 
 ```
 JWT_SECRET=SCALAPAY_SUPER_SECRET
 SCALAPAY_SECRET=qhtfs87hjnc12kkos
-PORT=5001
 ```
 
-Feel free to change the value of PORT to the one you prefer to use. If you consider deleting it, the dev server will be available by default on port 3000
+Feel free to add the value of PORT to the one you prefer to use. The dev server will be available by default on port 3000.
 
 ### Run the application
 
@@ -58,8 +57,8 @@ Start the server:
 
 `npm run start`
 
-The Scalapay API will be running at `http://localhost:<PORT>`.
-The Swagger will be available at `http://localhost:<PORT>/swagger`.
+The Scalapay API will be running at `http://localhost:3000`.
+The Swagger will be available at `http://localhost:3000/swagger`.
 
 ### Scripts
 
@@ -78,28 +77,22 @@ If you do prefer to use Docker in order to run this project you can follow these
 - Make sure to have [Docker](https://docs.docker.com/get-docker/) installed on your machine and to have it up and running.
 - Check if docker daemon is up by running `docker info`.
 
-### Build the application
+### Clone the application
 
 Clone the repository:
 
 `git clone https://github.com/gvbsxmoon/scalapay-assessment`
 
-Navigate to the api folder:
+Navigate to the root folder folder:
 
-`cd  <your-scalapay-project-path>/scalapay-api`
-
-Build your docker image: 
-
-`docker build -t scalapay-api:latest .`
+`cd  <your-scalapay-project-path>`
 
 ### Run the application
 
-Run the image you created:
+`docker-compose up`
 
-`docker run -d -p 5001:5001 scalapay-api:latest`
-
-The Scalapay API will be running at `http://localhost:5001`.
-The Swagger will be available at `http://localhost:5001/swagger`.
+The Scalapay API will be running at `http://localhost:3000`.
+The Swagger will be available at `http://localhost:3000/swagger`.
 
 
 
