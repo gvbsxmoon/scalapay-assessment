@@ -25,6 +25,9 @@ const FormView = () => {
 	/* form properties */
 	const { register, handleSubmit } = useForm<FieldValues>();
 	const onSubmit = async (data: FieldValues): Promise<void> => {
+		const _baseUrl: string = 'http://localhost:3000/';
+		const _endpoint: string = '/api/v1/order';
+
 		setLoading(true);
 		setErrors([]);
 
@@ -41,7 +44,7 @@ const FormView = () => {
 		};
 
 		try {
-			const response = await axios.post('http://localhost:5001/api/v1/order', orderBody, { headers: { Accept: 'application/json' } });
+			const response = await axios.post(`${_baseUrl}${_endpoint}`, orderBody, { headers: { Accept: 'application/json' } });
 			const { checkoutUrl } = response.data;
 
 			if (checkoutUrl) {
