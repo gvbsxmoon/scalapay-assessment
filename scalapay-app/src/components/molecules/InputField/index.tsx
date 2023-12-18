@@ -34,8 +34,8 @@ type InputFieldProps = {
 const InputField: React.FC<InputFieldProps> = ({ label, name, type, placeholder, register, options }) => {
 	return (
 		<Flex flexDirection='column' gap='8px'>
-			<Label>{label}</Label>
-			<StyledInputField type={type} placeholder={placeholder} {...register(name, { ...options })} />
+			<Label htmlFor={name}>{label}</Label>
+			<StyledInputField type={type} id={name} placeholder={placeholder} {...register(name, { ...options })} />
 		</Flex>
 	);
 };

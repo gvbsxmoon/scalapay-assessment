@@ -24,6 +24,7 @@ const FormView = () => {
 
 	/* form properties */
 	const { register, handleSubmit } = useForm<FieldValues>();
+
 	const onSubmit = async (data: FieldValues): Promise<void> => {
 		const _baseUrl: string = 'http://localhost:3000';
 		const _endpoint: string = '/api/v1/order';
